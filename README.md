@@ -6,4 +6,5 @@
 
 ## Usage
 ```resumeSdk.ParseByUrl(url, fileName, appCode)```
+
 ```resumeSdk.ParseByFilePath(path, fileName, appCode)```
