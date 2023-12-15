@@ -10,7 +10,7 @@ import (
 	"os"
 )
 
-func ParseByUrl(url string, fileName string, appCode string) map[string]any {
+func ParseByUrl(url, fileName, appCode string) map[string]any {
 	resp, err := http.Get(url)
 	if err != nil {
 		panic(err)
@@ -24,7 +24,7 @@ func ParseByUrl(url string, fileName string, appCode string) map[string]any {
 	return parse(content, fileName, appCode)
 }
 
-func ParseByFilePath(path string, fileName string, appCode string) map[string]any {
+func ParseByFilePath(path, fileName, appCode string) map[string]any {
 	content, err := os.ReadFile(path)
 	if err != nil {
 		panic(err)
@@ -35,7 +35,7 @@ func ParseByFilePath(path string, fileName string, appCode string) map[string]an
 	return parse(content, fileName, appCode)
 }
 
-func parse(content []byte, fileName string, appCode string) map[string]any {
+func parse(content []byte, fileName, appCode string) map[string]any {
 	client := &http.Client{}
 	payload := struct {
 		FileName   string `json:"file_name,omitempty"`
