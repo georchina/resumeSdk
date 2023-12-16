@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 	"os"
@@ -26,9 +27,6 @@ func ParseByUrl(url, fileName, appCode string) map[string]any {
 
 func ParseByFilePath(path, fileName, appCode string) map[string]any {
 	content, err := os.ReadFile(path)
-	if err != nil {
-		panic(err)
-	}
 	if err != nil {
 		panic(err)
 	}
@@ -59,7 +57,7 @@ func parse(content []byte, fileName, appCode string) map[string]any {
 
 	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
-		panic("Request fail")
+		panic(errors.New("request fail"))
 	}
 
 	result := make(map[string]interface{})

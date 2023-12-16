@@ -1,13 +1,13 @@
 # ResumeSdk golang sdk
-This is go sdk for resumeSdk Aliyun api
+这是resumeSdk阿里云api封装的go sdk
 
-website:https://www.resumesdk.com/
-aliyun:https://market.aliyun.com/products/57124001/cmapi034316.html
+官网：https://www.resumesdk.com/
+阿里云：https://market.aliyun.com/products/57124001/cmapi034316.html
 
-## Install
+## 下载
 ```go get -u github.com/georchina/resumeSdk```
 
-## Usage
+## 使用
 ```resumeSdk.ParseByUrl(url, fileName, appCode)```
 
 ```resumeSdk.ParseByFilePath(path, fileName, appCode)```
